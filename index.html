@@ -3,183 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takahata Precision (Thailand) Portal - Plant Rayong</title>
+    <title>Takahata Precision (Thailand) Plant Rayong - Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            font-family: 'Noto Sans Thai', sans-serif;
-            /* Updated background to the desired linear gradient */
-            background: linear-gradient(220.55deg, #7CF7FF 0%, #4B73FF 100%);
-            background-attachment: fixed; /* Ensures the gradient doesn't scroll with content */
+            font-family: 'Kanit', sans-serif;
+            background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+            min-height: 100vh;
         }
-        .link-card {
+        .card-link {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .link-card:hover {
+        .card-link:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        /* Glassmorphism effect for cards */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-        
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <img src="https://img2.imgbiz.com/imgbiz/TPthLogo.png" alt="Takahata Precision Logo" class="mx-auto h-20 w-auto mb-4"
-                 onerror="this.onerror=null; this.src='https://placehold.co/200x80/cccccc/ffffff?text=Logo';">
-            <!-- Changed text color to white for better contrast -->
-            <h1 class="text-3xl sm:text-4xl font-bold text-white">Takahata Precision (Thailand)</h1>
-            <p class="text-lg text-gray-200">Plant Rayong Portal</p>
+    <!-- Admin Panel Toggle Button -->
+    <button id="adminToggle" class="fixed bottom-4 right-4 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 z-40">
+        <i class="fa-solid fa-gear"></i>
+    </button>
+    
+    <!-- Password Modal -->
+    <div id="passwordModal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-50 flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-sm">
+            <h2 id="password-modal-title" class="text-2xl font-bold text-gray-800 mb-6 text-center">กรุณาใส่รหัสผ่าน</h2>
+            <form id="passwordForm">
+                <div class="mb-4">
+                    <label id="password-label" for="passwordInput" class="block text-sm font-medium text-gray-600 mb-1">รหัสผ่าน:</label>
+                    <input type="password" id="passwordInput" class="w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button id="password-submit-btn" type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">ตกลง</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Admin Panel (Hidden by default) -->
+    <div id="adminPanel" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-50 flex justify-center items-center">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-3xl max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="admin-panel-title" class="text-2xl font-bold text-gray-800">Admin Panel</h2>
+                <button id="closeAdminPanel" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            </div>
+            
+            <!-- Content for Admin Panel can be added here in the future -->
+            <p class="text-gray-500">Admin panel is currently under development.</p>
+
+        </div>
+    </div>
+    
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="relative text-center mb-8 md:mb-12">
+            <div class="absolute top-0 right-0 p-2 md:p-4">
+                <button id="lang-toggle" class="bg-white px-3 py-1 md:px-4 md:py-2 rounded-full shadow text-sm font-semibold text-gray-700 hover:bg-gray-200 transition-colors">English</button>
+            </div>
+            <img src="https://img2.imgbiz.com/imgbiz/Gemini_Generated_Image_y009x1y009x1y009.png" alt="Takahata Precision Logo" class="mx-auto h-20 w-auto mb-4">
+            <h1 id="main-title" class="text-3xl md:text-4xl font-bold text-gray-800">Takahata Precision (Thailand)</h1>
+            <p id="subtitle" class="text-lg text-gray-600">Plant Rayong Portal</p>
         </header>
 
         <main>
-            <!-- Internal Systems Section -->
-            <section class="mb-12">
-                <!-- Changed text and border color for better contrast -->
-                <h2 class="text-2xl font-semibold text-white border-l-4 border-white pl-4 mb-6">ระบบภายใน (Internal Systems)</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
-                    <!-- Realtime System -->
-                    <a href="http://172.19.10.66/dynamics/login/" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-full mr-4">
-                                <i class="fas fa-chart-line fa-lg text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">ระบบ Realtime</h3>
-                                <p class="text-gray-600">เข้าสู่ระบบตรวจสอบข้อมูล</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- MS Teams Meeting -->
-                    <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Aec967b0024e8412aafb9056dc0184a4f%40thread.tacv2%2F1674703535849%3Fcontext%3D%257B%2522Tid%2522%3A%252236d85c6c-406a-464b-b63a-db5627c5db9a%2522%2C%2522Oid%2522%3A%252277d273e0-2fa9-4e51-9bde-998be96a8349%2522%257D%26anon%3Dtrue&type=meetup-join&deeplinkId=fcc0b78d-d724-49cf-91aa-c2bb40777f2d&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-purple-100 rounded-full mr-4">
-                                <i class="fas fa-users fa-lg text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">ประชุมกับคุณโม</h3>
-                                <p class="text-gray-600">Microsoft Teams</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Meeting Room Booking -->
-                    <a href="https://sites.google.com/view/tpthbookingmeetingroom?usp=sharing" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                                <i class="fas fa-calendar-check fa-lg text-green-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">จองห้องประชุม</h3>
-                                <p class="text-gray-600">ระบบจองออนไลน์</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <!-- Teams Manual -->
-                    <a href="https://drive.google.com/file/d/1rsH_akVGaBn1IBzbRVnJYslhZEvlsFg5/view" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-full mr-4">
-                                <i class="fas fa-book-open fa-lg text-orange-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">คู่มือ Teams</h3>
-                                <p class="text-gray-600">คู่มือการใช้งาน</p>
-                            </div>
-                        </div>
-                    </a>
-
+            <!-- Internal Systems -->
+            <section class="mb-10">
+                <h2 id="internal-systems-title" class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-blue-600 pl-4">ระบบภายในบริษัท (Internal Systems)</h2>
+                <div id="internal-links" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Links will be injected by JavaScript -->
                 </div>
             </section>
 
-            <!-- External Systems Section -->
-            <section>
-                <!-- Changed text and border color for better contrast -->
-                <h2 class="text-2xl font-semibold text-white border-l-4 border-white pl-4 mb-6">เครื่องมือและระบบภายนอก (External Tools)</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
-                    <!-- Google Search -->
-                    <a href="https://www.google.com/" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-red-100 rounded-full mr-4">
-                                <i class="fab fa-google fa-lg text-red-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">Google Search</h3>
-                                <p class="text-gray-600">ค้นหาข้อมูล</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Google Translate -->
-                    <a href="https://translate.google.co.th/?sl=th&tl=en&op=translate" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-full mr-4">
-                                <i class="fas fa-language fa-lg text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">Google Translate</h3>
-                                <p class="text-gray-600">แปลภาษา</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <!-- Bing Translate -->
-                    <a href="https://www.bing.com/translator?from=&to=th&setlang=th" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-cyan-100 rounded-full mr-4">
-                               <i class="fas fa-language fa-lg text-cyan-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">Bing Translator</h3>
-                                <p class="text-gray-600">แปลภาษาโดย Microsoft</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- ChatGPT -->
-                    <a href="https://chatgpt.com/" target="_blank" class="link-card block p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 glass-card">
-                        <div class="flex items-center">
-                            <div class="w-14 h-14 flex items-center justify-center bg-emerald-100 rounded-full mr-4">
-                                <i class="fas fa-robot fa-lg text-emerald-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">ChatGPT</h3>
-                                <p class="text-gray-600">ผู้ช่วยส่วนตัว AI</p>
-                            </div>
-                        </div>
-                    </a>
-
+            <!-- External Tools -->
+            <section class="mb-10">
+                <h2 id="external-systems-title" class="text-2xl font-semibold text-gray-700 mb-6 border-l-4 border-green-600 pl-4">ระบบภายนอก (External Tools)</h2>
+                <div id="external-links" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Links will be injected by JavaScript -->
                 </div>
             </section>
         </main>
-
-        <footer class="text-center mt-12 py-4 border-t border-gray-200/50">
-            <!-- Changed text color for better contrast -->
-            <p class="text-gray-200">&copy; <span id="year"></span> Takahata Precision (Thailand) Co., Ltd. All rights reserved.</p>
-        </footer>
     </div>
 
     <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- TRANSLATIONS ---
+            const translations = {
+                th: {
+                    langToggleButton: 'English',
+                    mainTitle: 'Takahata Precision (Thailand)',
+                    subtitle: 'Plant Rayong Portal',
+                    internalSystemsTitle: 'ระบบภายในบริษัท (Internal Systems)',
+                    externalSystemsTitle: 'ระบบภายนอก (External Tools)',
+                    adminPanelTitle: 'แผงควบคุมผู้ดูแล',
+                    passwordModalTitle: 'กรุณาใส่รหัสผ่าน',
+                    passwordLabel: 'รหัสผ่าน:',
+                    passwordSubmitBtn: 'ตกลง',
+                    incorrectPassword: 'รหัสผ่านไม่ถูกต้อง!',
+                },
+                en: {
+                    langToggleButton: 'ภาษาไทย',
+                    mainTitle: 'Takahata Precision (Thailand)',
+                    subtitle: 'Plant Rayong Portal',
+                    internalSystemsTitle: 'Internal Systems',
+                    externalSystemsTitle: 'External Tools',
+                    adminPanelTitle: 'Admin Panel',
+                    passwordModalTitle: 'Please Enter Password',
+                    passwordLabel: 'Password:',
+                    passwordSubmitBtn: 'Submit',
+                    incorrectPassword: 'Incorrect Password!',
+                }
+            };
 
+            // --- DATA ---
+            const internalLinks = [
+                { key: 'booking', name: 'จองห้องประชุมออนไลน์', link: 'https://sites.google.com/view/tpthbookingmeetingroom?usp=sharing', icon: 'fa-solid fa-calendar-days', th: 'จองห้องประชุมออนไลน์', en: 'Online Meeting Room Booking' },
+                { key: 'realtime', name: 'ระบบ Realtime', link: 'http://172.19.10.66/dynamics/login/', icon: 'fa-solid fa-chart-line', th: 'ระบบ Realtime', en: 'Realtime System' },
+                { key: 'teams_meeting', name: 'ประชุมกับคุณโม (Teams)', link: 'https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Aec967b0024e8412aafb9056dc0184a4f%40thread.tacv2%2F1674703535849%3Fcontext%3D%257B%2522Tid%2522%3A%252236d85c6c-406a-464b-b63a-db5627c5db9a%2522%2C%2522Oid%2522%3A%252277d273e0-2fa9-4e51-9bde-998be96a8349%2522%257D%26anon%3Dtrue&type=meetup-join&deeplinkId=fcc0b78d-d724-49cf-91aa-c2bb40777f2d&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true', icon: 'fa-solid fa-users', th: 'ประชุมกับคุณโม (Teams)', en: 'Meeting with Ms.Mo (Teams)' },
+                { key: 'teams_manual', name: 'คู่มือ Microsoft Teams', link: 'https://drive.google.com/file/d/1rsH_akVGaBn1IBzbRVnJYslhZEvlsFg5/view', icon: 'fa-solid fa-book-open', th: 'คู่มือ Microsoft Teams', en: 'Microsoft Teams Manual' }
+            ];
+
+            const externalLinks = [
+                { key: 'google_search', name: 'ค้นหาด้วย Google', link: 'https://www.google.com/', icon: 'fa-brands fa-google', th: 'ค้นหาด้วย Google', en: 'Search with Google' },
+                { key: 'google_translate', name: 'แปลภาษา Google', link: 'https://translate.google.co.th/?sl=th&tl=en&op=translate', icon: 'fa-solid fa-language', th: 'แปลภาษา Google', en: 'Google Translate' },
+                { key: 'bing_translate', name: 'แปลภาษา Microsoft Bing', link: 'https://www.bing.com/translator?from=&to=th&setlang=th', icon: 'fa-brands fa-microsoft', th: 'แปลภาษา Microsoft Bing', en: 'Microsoft Bing Translator' },
+                { key: 'chatgpt', name: 'AI Assistant by ChatGPT', link: 'https://chatgpt.com/', icon: 'fa-solid fa-robot', th: 'ผู้ช่วย AI by ChatGPT', en: 'AI Assistant by ChatGPT' }
+            ];
+
+            const internalLinksContainer = document.getElementById('internal-links');
+            const externalLinksContainer = document.getElementById('external-links');
+
+            function createLinkCard(item, color) {
+                const colors = {
+                    blue: { bg: 'bg-blue-100', text: 'text-blue-600' },
+                    green: { bg: 'bg-green-100', text: 'text-green-600' }
+                };
+                const theme = colors[color] || colors.blue;
+
+                return `
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="card-link p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <div class="mb-4 flex items-center justify-center h-16 w-16 rounded-full ${theme.bg}">
+                            <i class="${item.icon} text-2xl ${theme.text}"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">${item.name}</h3>
+                    </a>
+                `;
+            }
+            
+            let currentLang = localStorage.getItem('lang') || 'th';
+
+            function setLanguage(lang) {
+                if (!translations[lang]) return;
+                
+                currentLang = lang;
+                localStorage.setItem('lang', lang);
+                document.documentElement.lang = lang;
+                
+                const t = translations[lang];
+
+                // Update static text elements
+                document.getElementById('lang-toggle').textContent = t.langToggleButton;
+                document.getElementById('main-title').textContent = t.mainTitle;
+                document.getElementById('subtitle').textContent = t.subtitle;
+                document.getElementById('internal-systems-title').textContent = t.internalSystemsTitle;
+                document.getElementById('external-systems-title').textContent = t.externalSystemsTitle;
+                
+                // Update Admin Panel text
+                document.getElementById('admin-panel-title').textContent = t.adminPanelTitle;
+               
+                // Update Password Modal text
+                document.getElementById('password-modal-title').textContent = t.passwordModalTitle;
+                document.getElementById('password-label').textContent = t.passwordLabel;
+                document.getElementById('password-submit-btn').textContent = t.passwordSubmitBtn;
+
+                // Update dynamic links
+                internalLinksContainer.innerHTML = '';
+                internalLinks.forEach(link => {
+                    internalLinksContainer.innerHTML += createLinkCard({...link, name: link[lang]}, 'blue');
+                });
+
+                externalLinksContainer.innerHTML = '';
+                externalLinks.forEach(link => {
+                    externalLinksContainer.innerHTML += createLinkCard({...link, name: link[lang]}, 'green');
+                });
+            }
+
+            // --- LANGUAGE TOGGLE ---
+            document.getElementById('lang-toggle').addEventListener('click', () => {
+                const newLang = currentLang === 'th' ? 'en' : 'th';
+                setLanguage(newLang);
+            });
+
+            // --- ADMIN PANEL & PASSWORD ---
+            const adminToggle = document.getElementById('adminToggle');
+            const adminPanel = document.getElementById('adminPanel');
+            const closeAdminPanel = document.getElementById('closeAdminPanel');
+            const passwordModal = document.getElementById('passwordModal');
+            const passwordForm = document.getElementById('passwordForm');
+            const passwordInput = document.getElementById('passwordInput');
+
+            adminToggle.onclick = () => {
+                passwordModal.classList.remove('hidden');
+                passwordInput.focus();
+            };
+
+            closeAdminPanel.onclick = () => adminPanel.classList.add('hidden');
+            
+            passwordForm.onsubmit = (e) => {
+                e.preventDefault();
+                // Replace 'lllusi0N' with a more secure password handling method if necessary
+                if (passwordInput.value === 'lllusi0N') {
+                    passwordModal.classList.add('hidden');
+                    passwordInput.value = '';
+                    adminPanel.classList.remove('hidden');
+                } else {
+                    alert(translations[currentLang].incorrectPassword);
+                    passwordInput.value = '';
+                }
+            };
+            
+            // Close password modal if clicking outside
+            passwordModal.addEventListener('click', function(event) {
+                if (event.target === passwordModal) {
+                    passwordModal.classList.add('hidden');
+                }
+            });
+
+            // --- INITIAL LOAD ---
+            setLanguage(currentLang); // This will render links and text in the correct language
+        });
+    </script>
 </body>
 </html>
