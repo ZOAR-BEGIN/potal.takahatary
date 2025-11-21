@@ -3,172 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Takahata Precision (Thailand) Portal - Plant Rayong</title>
+    <title>Takahata Precision (Thailand) - Plant Rayong Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.png" type="image/png">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans Thai', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
-            font-family: 'Noto Sans Thai', sans-serif;
-            background-color: #f0f2f5;
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        .link-card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+    <!-- Navbar / Header -->
+    <nav class="glass-nav fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-3">
+                    <img src="https://img2.imgbiz.com/imgbiz/TPTH_logo.png" alt="Logo" class="h-10 w-auto" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x40?text=TPTH';">
+                    <div class="hidden md:block border-l border-slate-300 h-6 mx-2"></div>
+                    <span class="hidden md:block text-lg font-semibold text-slate-700">Plant Rayong Portal</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <img src="https://img2.imgbiz.com/imgbiz/TPTH_logo.png" alt="Takahata Precision Logo" class="mx-auto h-20 w-auto mb-4"
-                 onerror="this.onerror=null; this.src='https://placehold.co/200x80/cccccc/ffffff?text=Logo';">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">Takahata Precision (Thailand)</h1>
-            <p class="text-lg text-gray-600">Plant Rayong Portal</p>
-        </header>
+        <!-- Hero / Welcome Message -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-2">IT Service Portal</h1>
+            <p class="text-slate-500 text-lg">รวมลิงก์ระบบงานและเครื่องมือสำหรับพนักงาน</p>
+        </div>
 
-        <main>
-            <!-- Internal Systems Section -->
-            <section class="mb-12">
-                <h2 class="text-2xl font-semibold text-gray-700 border-l-4 border-blue-600 pl-4 mb-6">ระบบภายใน (Internal Systems)</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
-                    <!-- Realtime System -->
-                    <a href="http://172.19.10.66/dynamics/login/" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-blue-100 rounded-full mr-4">
-                                <i class="fas fa-chart-line fa-lg text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">ระบบ Realtime</h3>
-                                <p class="text-gray-500">เข้าสู่ระบบตรวจสอบข้อมูล</p>
-                            </div>
+        <!-- SECTION 1: Microsoft 365 Services (New Request) -->
+        <section class="mb-10">
+            <div class="flex items-center mb-5">
+                <div class="w-1 h-8 bg-blue-600 rounded-full mr-3"></div>
+                <h2 class="text-xl font-bold text-slate-800">Microsoft 365 & Copilot</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- OneDrive -->
+                <a href="https://m365.cloud.microsoft/onedrive/?auth=2" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-20 h-20 bg-blue-50 rounded-full blur-xl group-hover:bg-blue-100 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-cloud text-2xl"></i>
                         </div>
-                    </a>
+                        <h3 class="font-semibold text-slate-800 text-lg">OneDrive</h3>
+                        <p class="text-slate-500 text-sm mt-1">พื้นที่จัดเก็บไฟล์ส่วนตัวบนคลาวด์</p>
+                    </div>
+                </a>
 
-                    <!-- MS Teams Meeting -->
-                    <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Aec967b0024e8412aafb9056dc0184a4f%40thread.tacv2%2F1674703535849%3Fcontext%3D%257B%2522Tid%2522%3A%252236d85c6c-406a-464b-b63a-db5627c5db9a%2522%2C%2522Oid%2522%3A%252277d273e0-2fa9-4e51-9bde-998be96a8349%2522%257D%26anon%3Dtrue&type=meetup-join&deeplinkId=fcc0b78d-d724-49cf-91aa-c2bb40777f2d&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-purple-100 rounded-full mr-4">
-                                <i class="fas fa-users fa-lg text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">ประชุมกับคุณโม</h3>
-                                <p class="text-gray-500">Microsoft Teams</p>
-                            </div>
+                <!-- Office 365 -->
+                <a href="https://m365.cloud.microsoft/apps/?auth=2&origindomain=Office" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-20 h-20 bg-orange-50 rounded-full blur-xl group-hover:bg-orange-100 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4 text-orange-600 group-hover:scale-110 transition-transform">
+                            <i class="fab fa-microsoft text-2xl"></i>
                         </div>
-                    </a>
+                        <h3 class="font-semibold text-slate-800 text-lg">Office 365 Portal</h3>
+                        <p class="text-slate-500 text-sm mt-1">รวมแอปพลิเคชัน Microsoft ทั้งหมด</p>
+                    </div>
+                </a>
 
-                    <!-- Meeting Room Booking -->
-                    <a href="https://sites.google.com/view/tpthbookingmeetingroom?usp=sharing" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-green-100 rounded-full mr-4">
-                                <i class="fas fa-calendar-check fa-lg text-green-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">จองห้องประชุม</h3>
-                                <p class="text-gray-500">ระบบจองออนไลน์</p>
-                            </div>
+                <!-- Teams Meeting -->
+                <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Aec967b0024e8412aafb9056dc0184a4f%40thread.tacv2%2F1674703535849%3Fcontext%3D%257B%2522Tid%2522%3A%252236d85c6c-406a-464b-b63a-db5627c5db9a%2522%2C%2522Oid%2522%3A%252277d273e0-2fa9-4e51-9bde-998be96a8349%2522%257D%26anon%3Dtrue&type=meetup-join&deeplinkId=fcc0b78d-d724-49cf-91aa-c2bb40777f2d&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-20 h-20 bg-indigo-50 rounded-full blur-xl group-hover:bg-indigo-100 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-4 text-indigo-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-video text-2xl"></i>
                         </div>
-                    </a>
-                    
-                    <!-- Teams Manual -->
-                    <a href="https://drive.google.com/file/d/1eM6Prb8IU3iCWiIERx6paaH_hkCBviMd/view?usp=sharing" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-orange-100 rounded-full mr-4">
-                                <i class="fas fa-book-open fa-lg text-orange-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">คู่มือ Teams</h3>
-                                <p class="text-gray-500">คู่มือการใช้งาน</p>
-                            </div>
+                        <h3 class="font-semibold text-slate-800 text-lg">Meeting Room</h3>
+                        <p class="text-slate-500 text-sm mt-1">เข้าร่วมประชุม Teams (คุณโม)</p>
+                    </div>
+                </a>
+
+                 <!-- Teams Manual -->
+                 <a href="https://drive.google.com/file/d/1rsH_akVGaBn1IBzbRVnJYslhZEvlsFg5/view" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-20 h-20 bg-purple-50 rounded-full blur-xl group-hover:bg-purple-100 transition-colors"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4 text-purple-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-book-open text-2xl"></i>
                         </div>
-                    </a>
+                        <h3 class="font-semibold text-slate-800 text-lg">คู่มือ Teams</h3>
+                        <p class="text-slate-500 text-sm mt-1">วิธีการใช้งานเบื้องต้น</p>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-                </div>
-            </section>
+        <!-- SECTION 2: Internal Systems -->
+        <section class="mb-10">
+            <div class="flex items-center mb-5">
+                <div class="w-1 h-8 bg-teal-500 rounded-full mr-3"></div>
+                <h2 class="text-xl font-bold text-slate-800">ระบบภายใน (Internal Systems)</h2>
+            </div>
 
-            <!-- External Systems Section -->
-            <section>
-                <h2 class="text-2xl font-semibold text-gray-700 border-l-4 border-teal-600 pl-4 mb-6">เครื่องมือและระบบภายนอก (External Tools)</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
-                    <!-- Google Search -->
-                    <a href="https://www.google.com/" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-red-100 rounded-full mr-4">
-                                <i class="fab fa-google fa-lg text-red-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">Google Search</h3>
-                                <p class="text-gray-500">ค้นหาข้อมูล</p>
-                            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Realtime System -->
+                <a href="http://172.19.10.66/dynamics/login/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-lg bg-teal-100 flex items-center justify-center mb-4 text-teal-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-line text-2xl"></i>
                         </div>
-                    </a>
+                        <h3 class="font-semibold text-slate-800 text-lg">ระบบ Realtime</h3>
+                        <p class="text-slate-500 text-sm mt-1">เข้าสู่ระบบตรวจสอบข้อมูลการผลิต</p>
+                    </div>
+                </a>
 
-                    <!-- Google Translate -->
-                    <a href="https://translate.google.co.th/?sl=th&tl=en&op=translate" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-blue-100 rounded-full mr-4">
-                                <i class="fas fa-language fa-lg text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">Google Translate</h3>
-                                <p class="text-gray-500">แปลภาษา</p>
-                            </div>
+                <!-- Meeting Room Booking -->
+                <a href="https://sites.google.com/view/tpthbookingmeetingroom?usp=sharing" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4 text-green-600 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-calendar-check text-2xl"></i>
                         </div>
-                    </a>
-                    
-                    <!-- Bing Translate -->
-                    <a href="https://www.bing.com/translator?from=&to=th&setlang=th" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-cyan-100 rounded-full mr-4">
-                               <i class="fas fa-language fa-lg text-cyan-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">Bing Translator</h3>
-                                <p class="text-gray-500">แปลภาษาโดย Microsoft</p>
-                            </div>
-                        </div>
-                    </a>
+                        <h3 class="font-semibold text-slate-800 text-lg">จองห้องประชุม</h3>
+                        <p class="text-slate-500 text-sm mt-1">ระบบจองห้องประชุมออนไลน์</p>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-                    <!-- ChatGPT -->
-                    <a href="https://chatgpt.com/" target="_blank" class="link-card block bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center">
-                            <div class="p-3 bg-emerald-100 rounded-full mr-4">
-                                <i class="fas fa-robot fa-lg text-emerald-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg text-gray-800">ChatGPT</h3>
-                                <p class="text-gray-500">ผู้ช่วยส่วนตัว AI</p>
-                            </div>
-                        </div>
-                    </a>
+        <!-- SECTION 3: AI & Tools -->
+        <section>
+            <div class="flex items-center mb-5">
+                <div class="w-1 h-8 bg-purple-600 rounded-full mr-3"></div>
+                <h2 class="text-xl font-bold text-slate-800">AI Assistant & Tools</h2>
+            </div>
 
-                </div>
-            </section>
-        </main>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                <!-- ChatGPT -->
+                <a href="https://chatgpt.com/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-full bg-teal-50 mx-auto mb-2 flex items-center justify-center text-teal-600 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-700">ChatGPT</h3>
+                </a>
 
-        <footer class="text-center mt-12 py-4 border-t">
-            <p class="text-gray-500">&copy; <span id="year"></span> Takahata Precision (Thailand) Co., Ltd. All rights reserved.</p>
-        </footer>
-    </div>
+                <!-- Gemini -->
+                <a href="https://gemini.google.com/app?hl=th" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 mx-auto mb-2 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-700">Gemini</h3>
+                </a>
+
+                <!-- Google Translate -->
+                <a href="https://translate.google.co.th/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-100 mx-auto mb-2 flex items-center justify-center text-gray-600 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-700">Google Translate</h3>
+                </a>
+
+                <!-- Bing Translate -->
+                <a href="https://www.bing.com/translator?from=&to=th&setlang=th" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-full bg-cyan-50 mx-auto mb-2 flex items-center justify-center text-cyan-600 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-700">Bing Translate</h3>
+                </a>
+
+                <!-- Tax Filing (E-Filing) -->
+                <a href="https://efiling.rd.go.th/rd-cms/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+                    <div class="w-10 h-10 rounded-full bg-green-50 mx-auto mb-2 flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-700">ยื่นภาษีออนไลน์</h3>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-slate-500">
+                &copy; <span id="year"></span> Takahata Precision (Thailand) Co., Ltd. All rights reserved.
+            </p>
+        </div>
+    </footer>
 
     <script>
-        // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
 </body>
 </html>
-
-
