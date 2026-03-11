@@ -35,14 +35,13 @@
 
     <style>
         body {
-            /* เพิ่มภาพพื้นหลัง และไล่สีขาวทับ (Overlay) เพื่อให้ดูสบายตา ไม่กวนสายตาเวลาอ่านข้อความ */
             background-color: #f8fafc;
             background-image: 
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(248, 250, 252, 0.6)),
                 url('https://img2.imgbiz.com/imgbiz/E1.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* ทำให้พื้นหลังอยู่กับที่เวลาเลื่อนหน้าจอ */
+            background-attachment: fixed;
         }
         .glass-nav {
             background: rgba(255, 255, 255, 0.65);
@@ -65,17 +64,15 @@
             box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 15px -6px rgba(0, 0, 0, 0.05);
             border-color: #3b82f6;
         }
-        /* Language Toggle Switch */
         .lang-btn {
             cursor: pointer;
             transition: all 0.2s;
         }
         .lang-btn.active {
-            background-color: #3b82f6; /* brand-500 */
+            background-color: #3b82f6;
             color: white;
             font-weight: 600;
         }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -266,6 +263,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_search">ค้นหาด้วย Google</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_search">Web Search Engine</p>
                     </div>
                 </a>
 
@@ -275,6 +273,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_translate">Google Translate</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_translate">แปลภาษาออนไลน์</p>
                     </div>
                 </a>
 
@@ -284,6 +283,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_bing">Bing Translate</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_bing">แปลภาษาโดย Microsoft</p>
                     </div>
                 </a>
 
@@ -293,6 +293,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate">ChatGPT</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_chatgpt">AI Chat Assistant</p>
                     </div>
                 </a>
 
@@ -302,6 +303,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate">Gemini</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_gemini">ผู้ช่วย AI จาก Google</p>
                     </div>
                 </a>
 
@@ -311,6 +313,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_pdf">จัดการไฟล์ PDF</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_pdf">เครื่องมือจัดการเอกสาร</p>
                     </div>
                 </a>
 
@@ -320,6 +323,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_qrcode">สร้าง QR Code</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_qrcode">สร้างคิวอาร์โค้ดฟรี</p>
                     </div>
                 </a>
 
@@ -329,6 +333,7 @@
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_tax">ยื่นภาษีออนไลน์</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_tax">กรมสรรพากร</p>
                     </div>
                 </a>
             </div>
@@ -380,11 +385,19 @@
                 title_manual: "คู่มือการใช้งาน Microsoft Team",
                 desc_manual: "วิธีการใช้งานเบื้องต้น",
                 title_search: "ค้นหาด้วย Google",
+                desc_search: "Web Search Engine",
                 title_translate: "Google Translate",
+                desc_translate: "แปลภาษาออนไลน์",
                 title_bing: "Bing Translate",
+                desc_bing: "แปลภาษาโดย Microsoft",
+                desc_chatgpt: "AI Chat Assistant",
+                desc_gemini: "ผู้ช่วย AI จาก Google",
                 title_tax: "ยื่นภาษีออนไลน์",
+                desc_tax: "กรมสรรพากร",
                 title_pdf: "จัดการไฟล์ PDF",
-                title_qrcode: "สร้าง QR Code"
+                desc_pdf: "เครื่องมือจัดการเอกสาร",
+                title_qrcode: "สร้าง QR Code",
+                desc_qrcode: "สร้างคิวอาร์โค้ดฟรี"
             },
             en: {
                 nav_title: "Takahata Precision (THAILAND)",
@@ -412,11 +425,19 @@
                 title_manual: "Microsoft Teams Manual",
                 desc_manual: "Basic Usage Guide",
                 title_search: "Google Search",
+                desc_search: "Web Search Engine",
                 title_translate: "Google Translate",
+                desc_translate: "Online Translation Tool",
                 title_bing: "Bing Translate",
+                desc_bing: "Microsoft Translation Tool",
+                desc_chatgpt: "AI Chat Assistant",
+                desc_gemini: "Google AI Assistant",
                 title_tax: "Online Tax Filing",
+                desc_tax: "Revenue Department",
                 title_pdf: "PDF Tools",
-                title_qrcode: "QR Code Generator"
+                desc_pdf: "Document Management Tools",
+                title_qrcode: "QR Code Generator",
+                desc_qrcode: "Create free QR codes"
             }
         };
 
