@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="https://img2.imgbiz.com/imgbiz/favicon.png" type="image/png">
     
     <script>
         tailwind.config = {
@@ -35,25 +35,23 @@
 
     <style>
         body {
-            background-color: #f8fafc;
-            background-image: 
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(248, 250, 252, 0.6)),
-                url('https://img2.imgbiz.com/imgbiz/pexels-pixabay-358374.jpg');
+            background-color: #f0f9ff;
+            background-image: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #f0f9ff 100%);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         .glass-nav {
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 30px rgba(14, 165, 233, 0.08);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.05);
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,11 +106,40 @@
         </div>
     </nav>
 
-    <main class="flex-grow pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
+    <main class="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
         
-        <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 drop-shadow-sm" data-i18n="hero_title">Systems and tools</h1>
-            <p class="text-slate-600 text-lg font-medium" data-i18n="hero_subtitle">ระบบงานและเครื่องมือสำหรับพนักงาน</p>
+        <!-- Header Banner Section (Updated) -->
+        <div class="w-full rounded-2xl sm:rounded-3xl overflow-hidden mb-12 relative shadow-xl bg-sky-800 mt-4 border border-white/50">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://img2.imgbiz.com/imgbiz/IMG_20260113_E2.jpg');"></div>
+            <!-- Soft Blue Multiplier Overlay -->
+            <div class="absolute inset-0 bg-sky-500/30 mix-blend-multiply"></div>
+            <!-- Gradient Overlay for better text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-sky-800/95 via-sky-700/80 to-transparent"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 p-6 sm:p-10 md:p-12 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8">
+                <!-- Left side: Logo & Text -->
+                <div class="flex flex-col sm:flex-row items-center sm:items-center gap-6 text-center sm:text-left">
+                    <!-- Logo Box -->
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-[1.25rem] shadow-xl flex items-center justify-center shrink-0 p-3">
+                        <img src="https://img2.imgbiz.com/imgbiz/favicon.png" alt="TPTH Logo" class="max-w-full max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <!-- Text -->
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-white drop-shadow-md tracking-tight mb-2" data-i18n="hub_title">TPTH Digital Hub</h1>
+                        <p class="text-base sm:text-lg md:text-xl text-blue-50 drop-shadow-sm font-medium" data-i18n="hub_subtitle">ศูนย์รวมลิงก์สำคัญสำหรับพนักงานและระบบงาน</p>
+                    </div>
+                </div>
+
+                <!-- Right side: Date Badge -->
+                <div class="shrink-0 lg:mt-0">
+                    <div class="inline-flex items-center gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-white/40 bg-white/10 backdrop-blur-md text-white shadow-lg transition-all hover:bg-white/20">
+                        <i class="far fa-calendar-alt text-lg"></i>
+                        <span id="current-date-display" class="text-sm sm:text-base md:text-lg font-medium tracking-wide">...</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Section 1: ระบบบริหารจัดการองค์กร (ERP Systems) -->
@@ -341,7 +368,7 @@
 
     </main>
 
-    <!-- Footer ทำเป็น Glassmorphism ให้เข้ากับภาพรวม -->
+    <!-- Footer -->
     <footer class="mt-auto relative z-10 glass-nav py-6 border-t-0 border-b-0 shadow-[0_-4px_30px_rgba(0,0,0,0.05)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-sm font-medium text-slate-500">
@@ -354,15 +381,15 @@
     </footer>
 
     <script>
-        // Set current year
+        // Set current year in Footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Language Data
         const translations = {
             th: {
                 nav_title: "ทาคาฮาตะ พริซิชั่น (ไทยแลนด์)",
-                hero_title: "หน้าหลักระบบและเครื่องมือ",
-                hero_subtitle: "ระบบงานและเครื่องมือสำหรับพนักงาน",
+                hub_title: "TPTH Digital Hub",
+                hub_subtitle: "ศูนย์รวมลิงก์สำคัญสำหรับพนักงานและระบบงาน",
                 sec_erp: "ระบบบริหารจัดการองค์กร (ERP Systems)",
                 title_d365: "Dynamics 365 F&O",
                 desc_d365: "ระบบ ERP บริหารจัดการองค์กร",
@@ -401,8 +428,8 @@
             },
             en: {
                 nav_title: "Takahata Precision (THAILAND)",
-                hero_title: "System & Tools Portal",
-                hero_subtitle: "Hub for Employee Systems and Tools",
+                hub_title: "TPTH Digital Hub",
+                hub_subtitle: "Centralized links for employees and systems",
                 sec_erp: "Enterprise Resource Planning (ERP)",
                 title_d365: "Dynamics 365 F&O",
                 desc_d365: "Enterprise Resource Planning (ERP)",
@@ -441,6 +468,21 @@
             }
         };
 
+        // Date update function
+        function updateDateDisplay(lang) {
+            const dateElement = document.getElementById('current-date-display');
+            const now = new Date();
+            
+            if (lang === 'th') {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                // Using Buddhist calendar standard for Thai locale
+                dateElement.textContent = now.toLocaleDateString('th-TH', options);
+            } else {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                dateElement.textContent = now.toLocaleDateString('en-US', options);
+            }
+        }
+
         // Language Switcher Function
         function setLanguage(lang) {
             // Update Active Button State
@@ -458,6 +500,9 @@
                     el.textContent = translations[lang][key];
                 }
             });
+
+            // Update Header Date
+            updateDateDisplay(lang);
         }
 
         // Initialize Default Language (Thai)
@@ -466,6 +511,3 @@
 
 </body>
 </html>
-
-
-
