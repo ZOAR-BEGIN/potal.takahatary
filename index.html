@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- เปลี่ยนจาก Prompt เป็น Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://img2.imgbiz.com/imgbiz/favicon.png" type="image/png">
     
     <script>
@@ -16,7 +17,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Prompt', 'sans-serif'],
+                        // เปลี่ยนจาก Prompt เป็น Sarabun
+                        sans: ['Sarabun', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -40,6 +42,8 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            /* เพิ่มขนาด font เริ่มต้นเล็กน้อยสำหรับ Sarabun เพื่อให้อ่านง่ายขึ้น (ตัวเลือกเสริม) */
+            font-size: 105%; 
         }
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
@@ -434,8 +438,8 @@
                 sec_internal: "ระบบภายใน (Internal Systems)",
                 title_booking: "จองห้องประชุม",
                 desc_booking: "ระบบจองห้องประชุมออนไลน์",
-                title_visitor: "ระบบขออนุญาตเข้าพื้นที่บริษัท", // <--- เพิ่มตรงนี้
-                desc_visitor: "ฟอร์มขออนุญาตเข้าโรงงาน", // <--- เพิ่มตรงนี้
+                title_visitor: "ระบบขออนุญาตเข้าพื้นที่บริษัท", 
+                desc_visitor: "ฟอร์มขออนุญาตเข้าโรงงาน", 
                 title_activity: "บันทึกภาพกิจกรรมบริษัท",
                 desc_activity: "อัลบั้มภาพกิจกรรมต่างๆ",
                 title_uniform: "ระบบสำรวจชุดพนักงานประจำปี",
@@ -482,8 +486,8 @@
                 sec_internal: "Internal Systems",
                 title_booking: "Meeting Room Booking",
                 desc_booking: "Online Booking System",
-                title_visitor: "Visitor Access System", // <--- เพิ่มตรงนี้
-                desc_visitor: "Factory/Area visitor request form", // <--- เพิ่มตรงนี้
+                title_visitor: "Visitor Access System", 
+                desc_visitor: "Factory/Area visitor request form", 
                 title_activity: "Company Activity Photos",
                 desc_activity: "Photo Gallery & Records",
                 title_uniform: "Annual Uniform Survey",
