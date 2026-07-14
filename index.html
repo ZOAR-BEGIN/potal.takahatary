@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- เปลี่ยนจาก Prompt เป็น Sarabun -->
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://img2.imgbiz.com/imgbiz/favicon.png" type="image/png">
     
@@ -190,7 +189,6 @@
                     </div>
                 </a>
                 
-                <!-- เพิ่มใหม่: ระบบขออนุญาตเข้าพื้นที่บริษัท -->
                 <a href="https://sites.google.com/view/tpthvisitoraccess" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-cyan-100/80 flex items-center justify-center text-cyan-600 group-hover:scale-110 group-hover:bg-cyan-100 transition-all duration-300 shadow-sm">
                         <i class="fas fa-id-badge text-xl"></i>
@@ -198,16 +196,6 @@
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_visitor">ระบบขออนุญาตเข้าพื้นที่บริษัท</h3>
                         <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_visitor">ฟอร์มขออนุญาตเข้าโรงงาน</p>
-                    </div>
-                </a>
-
-                <a href="https://sites.google.com/view/tpthryuniformsurvay/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
-                    <div class="w-12 h-12 shrink-0 rounded-xl bg-rose-100/80 flex items-center justify-center text-rose-600 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 shadow-sm">
-                        <i class="fas fa-tshirt text-xl"></i>
-                    </div>
-                    <div class="relative z-10 flex-1 min-w-0">
-                        <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_uniform">ระบบสำรวจชุดพนักงานประจำปี</h3>
-                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_uniform">แบบฟอร์มสำรวจชุดพนักงาน</p>
                     </div>
                 </a>
 
@@ -221,7 +209,6 @@
                     </div>
                 </a>
 
-                <!-- ย้ายบันทึกภาพกิจกรรมมาไว้ท้ายสุดของ Section นี้ -->
                 <a href="https://sites.google.com/view/tpthryphotoactivity" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-pink-100/80 flex items-center justify-center text-pink-600 group-hover:scale-110 group-hover:bg-pink-100 transition-all duration-300 shadow-sm">
                         <i class="fas fa-camera text-xl"></i>
@@ -229,6 +216,25 @@
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_activity">บันทึกภาพกิจกรรมบริษัท</h3>
                         <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_activity">อัลบั้มภาพกิจกรรมต่างๆ</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="w-1.5 h-8 bg-amber-500 rounded-full mr-3 shadow-sm"></div>
+                <h2 class="text-xl font-bold text-slate-800" data-i18n="sec_internal_specific">ระบบภายในเฉพาะส่วนงาน (Internal system specific)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="https://sites.google.com/view/tpthryuniformsurvay/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-rose-100/80 flex items-center justify-center text-rose-600 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 shadow-sm">
+                        <i class="fas fa-tshirt text-xl"></i>
+                    </div>
+                    <div class="relative z-10 flex-1 min-w-0">
+                        <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_uniform">ระบบสำรวจชุดพนักงานประจำปี</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_uniform">แบบฟอร์มสำรวจชุดพนักงาน</p>
                     </div>
                 </a>
 
@@ -435,6 +441,7 @@
                 title_support_d365: "Dynamics 365 F&O Support",
                 desc_support_d365: "ระบบแจ้งซ่อมและสนับสนุน",
                 sec_internal: "ระบบภายใน (Internal Systems)",
+                sec_internal_specific: "ระบบภายในเฉพาะส่วนงาน (Internal system specific)", // เพิ่มคีย์สำหรับ Section ใหม่
                 title_booking: "จองห้องประชุม",
                 desc_booking: "ระบบจองห้องประชุมออนไลน์",
                 title_visitor: "ระบบขออนุญาตเข้าพื้นที่บริษัท", 
@@ -484,6 +491,7 @@
                 title_support_d365: "Dynamics 365 F&O Support",
                 desc_support_d365: "Report issues and support",
                 sec_internal: "Internal Systems",
+                sec_internal_specific: "Internal System Specific", // เพิ่มคีย์แปลภาษาอังกฤษสำหรับ Section ใหม่
                 title_booking: "Meeting Room Booking",
                 desc_booking: "Online Booking System",
                 title_visitor: "Visitor Access System", 
