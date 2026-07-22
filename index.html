@@ -16,7 +16,6 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        // เปลี่ยนจาก Prompt เป็น Sarabun
                         sans: ['Sarabun', 'sans-serif'],
                     },
                     colors: {
@@ -41,7 +40,6 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            /* เพิ่มขนาด font เริ่มต้นเล็กน้อยสำหรับ Sarabun เพื่อให้อ่านง่ายขึ้น (ตัวเลือกเสริม) */
             font-size: 105%; 
         }
         .glass-nav {
@@ -168,7 +166,6 @@
                         <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_support_d365">ระบบแจ้งซ่อมและสนับสนุน</p>
                     </div>
                 </a>
-
             </div>
         </section>
 
@@ -228,6 +225,18 @@
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- เพิ่ม Maintenance System ที่นี่ -->
+                <a href="https://tpthrayong.github.io/pmf/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-emerald-100/80 flex items-center justify-center text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-100 transition-all duration-300 shadow-sm">
+                        <i class="fas fa-tools text-xl"></i>
+                    </div>
+                    <div class="relative z-10 flex-1 min-w-0">
+                        <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_maintenance">Maintenance System</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_maintenance">ระบบจัดการงานซ่อมบำรุง</p>
+                    </div>
+                </a>
+
                 <a href="https://sites.google.com/view/tpthryuniformsurvay/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-rose-100/80 flex items-center justify-center text-rose-600 group-hover:scale-110 group-hover:bg-rose-100 transition-all duration-300 shadow-sm">
                         <i class="fas fa-tshirt text-xl"></i>
@@ -441,7 +450,12 @@
                 title_support_d365: "Dynamics 365 F&O Support",
                 desc_support_d365: "ระบบแจ้งซ่อมและสนับสนุน",
                 sec_internal: "ระบบภายใน (Internal Systems)",
-                sec_internal_specific: "ระบบภายในเฉพาะส่วนงาน (Internal system specific)", // เพิ่มคีย์สำหรับ Section ใหม่
+                sec_internal_specific: "ระบบภายในเฉพาะส่วนงาน (Internal system specific)", 
+                
+                // เพิ่มคำแปลสำหรับ Maintenance
+                title_maintenance: "ระบบแจ้งซ่อม (Maintenance System)",
+                desc_maintenance: "ระบบจัดการงานซ่อมบำรุง",
+
                 title_booking: "จองห้องประชุม",
                 desc_booking: "ระบบจองห้องประชุมออนไลน์",
                 title_visitor: "ระบบขออนุญาตเข้าพื้นที่บริษัท", 
@@ -491,7 +505,12 @@
                 title_support_d365: "Dynamics 365 F&O Support",
                 desc_support_d365: "Report issues and support",
                 sec_internal: "Internal Systems",
-                sec_internal_specific: "Internal System Specific", // เพิ่มคีย์แปลภาษาอังกฤษสำหรับ Section ใหม่
+                sec_internal_specific: "Internal System Specific", 
+                
+                // เพิ่มคำแปลสำหรับ Maintenance
+                title_maintenance: "Maintenance System",
+                desc_maintenance: "Maintenance Management System",
+
                 title_booking: "Meeting Room Booking",
                 desc_booking: "Online Booking System",
                 title_visitor: "Visitor Access System", 
@@ -539,7 +558,6 @@
             
             if (lang === 'th') {
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                // Using Buddhist calendar standard for Thai locale
                 dateElement.textContent = now.toLocaleDateString('th-TH', options);
             } else {
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -552,7 +570,6 @@
             const timeElement = document.getElementById('current-time-display');
             if (!timeElement) return;
             const now = new Date();
-            // Format to HH:MM:SS (24-hour format)
             const timeString = now.toLocaleTimeString('en-US', { 
                 hour12: false, 
                 hour: '2-digit', 
